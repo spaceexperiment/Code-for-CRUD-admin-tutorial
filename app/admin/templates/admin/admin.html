@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Admin</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/pure/0.5.0/pure-min.css">
+	<style>
+		.main {
+		  position: relative;
+		  width: 90%;
+		  margin: 0 auto;
+		  height: inherit;
+		 }
+		.main .menu ul {
+		  width: 90%;
+		}
+		.main .menu ul li:last-child {
+		  float: right;
+		  display: inline-block;
+        }
+
+		.button {
+		  color: white;
+		  border-radius: 4px;
+		  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.2);
+		}
+		.button.red {
+		  background: #ca3c3c;
+		}
+		.button.blue {
+		  background: #3caeca;
+		}
+
+        .listview > a {
+	      margin: 10px 0 10px 20px;
+        }
+        .listview .pure-g {
+          margin: 2px auto;
+          padding: 10px 0 10px 20px;
+          background: #f4f6ff;
+        }
+        .listview .pure-u {
+          overflow: hidden;
+        }
+	  
+  		.item-form .pure-form {
+		  width: 90%;
+		  margin: 40px auto;
+		}
+		.item-form .pure-form legend {
+		  color: #6b6b6b;
+		  font-size: 1.2em;
+		}
+		.item-form .pure-form label {
+		  margin-top: 30px;
+		  color: #a5a5a5;
+		}
+		.item-form .pure-form textarea {
+		  min-height: 200px;
+		  padding: 10px;
+		}
+		.item-form .pure-form input, .item-form .pure-form select, .item-form .pure-form textarea {
+		  width: 100%;
+		}
+		.item-form .pure-form input[type="checkbox"] {
+		  width: 50px;
+		}
+		.item-form .pure-form button {
+		  margin: 30px 0;
+		}
+
+
+	</style>
+
+		{% block head %} {% endblock %}
+</head>
+<body>
+	<div class="main">
+        <div class="menu pure-menu pure-menu-open pure-menu-horizontal">
+            <a href="/" class="pure-menu-heading">Admin</a>
+
+            <ul>
+                <li><a href="{{ url_for('admin.blog')}}">Blog</a></li>
+                <li><a href="{{ url_for('admin.comments')}}">Comments</a></li>
+                <li><a class="pure-button" href="#not_implemented">Logout</a></li>
+
+            </ul>
+        </div>
+		{% block body %}
+
+		{% endblock %}
+	</div>
+</body>
+</html>
